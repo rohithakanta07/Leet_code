@@ -11,7 +11,10 @@ class Solution:
         # val=list(d.values())
         # val.sort()
         # dic = {i: d[i] for i in val}
-        dic = dict(sorted(d.items(), key=operator.itemgetter(1)))
+        # dic = dict(sorted(d.items(), key=operator.itemgetter(1)))
+        dic = dict(sorted(d.items(),key= lambda x:(x[1],x[0])))
+        # return dic
+
         ss=""
         for i in dic:
             while(dic[i]!=0):
