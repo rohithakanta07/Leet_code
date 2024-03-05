@@ -4,10 +4,6 @@ class Solution:
         j=len(s)-1
         if(len(s)<=2):
             return len(s)
-        if s=="bbbbbbbbbbbbbbbbbbbbbbbbbbbabbbbbbbbbbbbbbbccbcbcbccbbabbb":
-            return 1 
-        if s=="bbbbbbbbbbbbbbbbbbb":
-            return 0
         s1=""
         if(s[i]!=s[j]):
             return len(s)
@@ -15,13 +11,19 @@ class Solution:
             if s[i]==s[j]:
                 while(s[i]==s[i+1]):
                     i+=1
+                    if(i==len(s)-1):
+                        break
+                
                 while(s[j]==s[j-1]):
                     j-=1
+                    if(j-1==0):
+                        break
                 s1=s[i+1:j]
                 i+=1
                 j-=1
             else:
                 # s1=s[i+1:j]
-                return len(s1)             
+                break
+                # return len(s1)             
         return len(s1)
         
