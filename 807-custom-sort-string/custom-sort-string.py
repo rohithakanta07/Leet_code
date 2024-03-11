@@ -15,8 +15,7 @@ class Solution:
                     ns+=i
                     d[i]-=1
         for i in d:
-            if d[i]!=0:
-                while(d[i]!=0):
-                    ns+=i
-                    d[i]-=1
+            while(d[i]!=0):
+                ns+=i
+                d[i]-=1
         return ns
