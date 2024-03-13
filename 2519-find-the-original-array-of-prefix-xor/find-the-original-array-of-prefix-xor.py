@@ -3,8 +3,8 @@ class Solution:
     def findArray(self, pref: List[int]) -> List[int]:
         p=[]
         p.append(pref[0])
-        for i in range(0,len(pref)-1):
-            p.append(pref[i]^pref[i+1])
+        for i in range(1,len(pref)):
+            p.append(pref[i-1]^pref[i])
         return p
         # for i in range(1,len(pref)):
         #     x=0
