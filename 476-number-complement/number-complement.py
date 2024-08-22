@@ -2,14 +2,11 @@ class Solution:
     def findComplement(self, num: int) -> int:
         k=list(bin(num))
         k=k[2:]
-        ans=[]
+        c=""
         for i in k:
             if (i=='0'):
-                ans.append('1')
+                c=c+'1'
             else:
-                ans.append('0')
-        c=""
-        for i in ans:
-            c=c+i
+                c=c+'0'
         return int(str(c), 2)
         
