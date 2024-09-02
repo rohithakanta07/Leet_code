@@ -6,4 +6,4 @@ class Solution:
                 return i
             else:
                 a = a - chalk[i]
-        return 0
+        # return 0
