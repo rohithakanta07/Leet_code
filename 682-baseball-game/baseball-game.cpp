@@ -10,22 +10,21 @@ public:
             // }
 
              if (isdigit(operations[i][0]) || operations[i][0] == '-') {
-                // Convert the entire string to an integer and push onto the stack
                 st.push(stoi(operations[i]));
             } 
              else if (operations[i] == "+") {
                 int top1 = st.top(); st.pop();
                 int top2 = st.top();
-                st.push(top1);  // push back the first popped element
-                st.push(top1 + top2);  // sum of the last two
+                st.push(top1);  
+                st.push(top1 + top2);  
                 cout<<st.top()<<" ";
             } 
             else if (operations[i] == "C") {
-                st.pop();  // Remove the last score
+                st.pop(); 
                 // cout<<st.top()<<" ";
             } 
             else if (operations[i] == "D") {
-                st.push(2 * st.top());  // Double the last score
+                st.push(2 * st.top()); 
                 cout<<st.top()<<" ";
             }
         }
