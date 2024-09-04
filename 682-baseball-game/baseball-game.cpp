@@ -2,39 +2,29 @@ class Solution {
 public:
     int calPoints(vector<string>& operations) {
         stack<int>st;
-        for(int i = 0 ; i<operations.size(); i++)
-        {
-            // if(isdigit(operations[i][0])){
-            //     st.push(int(operations[i][0])-int('0'));
-            //     cout<<st.top()<<" ";
-            // }
-
-             if (isdigit(operations[i][0]) || operations[i][0] == '-') {
+        for(int i = 0 ; i<operations.size();i++){
+            if(operations[i][0]=='-' || isdigit(operations[i][0])){
                 st.push(stoi(operations[i]));
-            } 
-             else if (operations[i] == "+") {
-                int top1 = st.top(); 
+            }
+            else if(operations[i] == "+"){
+                int a = st.top();
                 st.pop();
-                int top2 = st.top();
-                st.push(top1);  
-                st.push(top1 + top2);  
-                // cout<<st.top()<<" ";
-            } 
-            else if (operations[i] == "C") {
-                st.pop(); 
-                // cout<<st.top()<<" ";
-            } 
-            else if (operations[i] == "D") {
-                st.push(2 * st.top()); 
-                // cout<<st.top()<<" ";
+                int b=st.top();
+                st.push(a);
+                st.push(a+b);
+            }
+            else if(operations[i] == "C"){
+                st.pop();
+            }
+            else if(operations[i] == "D"){
+                st.push(2*st.top());
             }
         }
-        int sum = 0;
-        while (!st.empty()) {
-            sum += st.top();
+        int summ = 0 ;
+        while(!st.empty()){
+            summ+=st.top();
             st.pop();
         }
-        
-        return sum;
+        return summ;
     }
 };
