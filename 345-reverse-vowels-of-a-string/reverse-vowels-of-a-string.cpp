@@ -15,6 +15,7 @@ public:
         mp['o'] = 1;
         mp['U'] = 1;
         mp['u'] = 1;
+        char temp;
         while(i<j){
             if(mp[s[i]]!=1){
                 i++;
@@ -23,7 +24,7 @@ public:
                 j--;
             }
             if(mp[s[i]]==1 && mp[s[j]]==1){
-                char temp = s[i];
+                temp = s[i];
                 s[i]=s[j];
                 s[j]=temp;
                 i++;
