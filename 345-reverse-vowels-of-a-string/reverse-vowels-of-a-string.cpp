@@ -23,7 +23,9 @@ public:
                 j--;
             }
             if(mp[s[i]]==1 && mp[s[j]]==1){
-                swap(s[i],s[j]);
+                char temp = s[i];
+                s[i]=s[j];
+                s[j]=temp;
                 i++;
                 j--;
             }
