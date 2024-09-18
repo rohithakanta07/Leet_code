@@ -16,18 +16,14 @@ public:
         mp['U'] = 1;
         mp['u'] = 1;
         while(i<j){
-            if( mp[s[i]] ==1 && mp[s[j]] == 1){
+            if(mp[s[i]]!=1){
+                i++;
+            }
+            if(mp[s[j]]!=1){
+                j--;
+            }
+            if(mp[s[i]]==1 && mp[s[j]]==1){
                 swap(s[i],s[j]);
-                i++;
-                j--;
-            }
-            else if( mp[s[i]] !=1 && mp[s[j]] == 1){
-                i++;
-            }
-            else if( mp[s[i]] ==1 && mp[s[j]] != 1){
-                j--;
-            }
-            else{
                 i++;
                 j--;
             }
