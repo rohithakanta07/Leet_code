@@ -1,8 +1,8 @@
 class Solution {
 public:
-    static bool comp(string a , string b){
-        return a<b;
-    }
+    // static bool comp(string a , string b){
+    //     return a<b;
+    // }
     vector<int> lexicalOrder(int n) {
         vector<string>strvec;
         vector<int>res;
@@ -10,7 +10,7 @@ public:
             string s = to_string(i);
             strvec.push_back(s);
         }
-        sort(strvec.begin(),strvec.end(),comp);
+        sort(strvec.begin(),strvec.end());
         for(auto i : strvec){
             res.push_back(stoi(i));
         }
