@@ -1,18 +1,20 @@
 class Solution {
 public:
     int minimumSumSubarray(vector<int>& nums, int l, int r) {
-        multiset<int>ms;
-        for(int i = l ; i <=r ; i++){ // i = l to r
-            for(int j =0 ; j <= nums.size()-i;j++){
-                int sum = 0 ;
-                for(int k = j ; k < j+i;k++){
-                    sum+=nums[k];
-                }
-                // cout<<endl;
-                if(sum>0) ms.insert(sum);
+        int ans=INT_MAX;
+        while(l<=r){
+            int s = 0;
+            for(int i = 0 ; i<l ; i++){
+                s+=nums[i];
             }
+            if(s>0) ans=min(ans,s);
+            for(int j = l ; j<nums.size();j++){
+                s-=nums[j-l];
+                s+=nums[j];
+                if(s>0) ans=min(ans,s);
+            }
+            l++;
         }
-        return ms.empty()? -1 : *ms.begin();
-        // return 0;
+        return ans==INT_MAX ?  -1 :  ans;
     }
 };
