@@ -2,7 +2,7 @@ class Solution {
 public:
     long long repairCars(vector<int>& ranks, int cars) {
         long long l = 0 , mi = INT_MAX;
-        long long m = *max_element(ranks.begin() , ranks.end());
+        long long m = *min_element(ranks.begin() , ranks.end());
         long long h = m * cars*cars;
         // sort(ranks.begin(),ranks.end());
         while(l<h){
